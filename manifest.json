@@ -1,0 +1,21 @@
+{
+  "short_name": "SmokeLess",
+  "name": "SmokeLess",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#f97316",
+  "background_color": "#000000",
+  "description": "An application to track daily cigarette consumption with graphical analysis and daily reminders to help you quit smoking."
+}

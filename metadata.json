@@ -1,0 +1,5 @@
+{
+  "name": "SmokeLess",
+  "description": "An application to track daily cigarette consumption with graphical analysis and daily reminders to help you quit smoking.",
+  "requestFramePermissions": []
+}
