@@ -24,13 +24,19 @@ export const useSmokingData = () => {
         
         // Simple migration for old data structure
         if (parsedData.length > 0 && parsedData[0].hasOwnProperty('count')) {
-            parsedData = parsedData.map(oldEntry => ({
-                date: oldEntry.date,
-                cigarettes: Array.from({ length: oldEntry.count }, () => ({
-                    timestamp: new Date(oldEntry.date).getTime(),
-                    reason: 'Inconnue'
-                }))
-            }));
+            parsedData = parsedData.map(oldEntry => {
+                // Robust date parsing to avoid cross-browser inconsistencies
+                const [year, month, day] = oldEntry.date.split('-').map(Number);
+                const dateForTimestamp = new Date(year, month - 1, day);
+
+                return {
+                    date: oldEntry.date,
+                    cigarettes: Array.from({ length: oldEntry.count }, () => ({
+                        timestamp: dateForTimestamp.getTime(),
+                        reason: 'Inconnue'
+                    }))
+                };
+            });
         }
 
         // Sort data just in case it's not ordered

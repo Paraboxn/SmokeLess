@@ -19,11 +19,14 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-180x180.png" />
     <link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png" />
     <link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png" />
-
+    
+    <script async src="https://ga.jspm.io/npm:es-module-shims@1.10.0/dist/es-module-shims.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       body {
         background-color: #000000; /* bg-black */
+        /* Add safe area padding for iOS devices in PWA mode */
+        padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
       }
     </style>
   <script type="importmap">
